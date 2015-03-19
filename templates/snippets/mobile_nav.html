@@ -1,0 +1,45 @@
+<div id='mobile-nav-wrapper' class='border-box'>
+
+{#    <div id='close' onclick='toggleMobileMenu();'>#}
+{#        <img src='/static/images/nav/mobile_close.png' alt='X'>#}
+{#    </div>#}
+{##}
+{#    <div class='nav-title left'>Menu</div>#}
+
+    <ul id='mobile-nav' class='no-list left border-box'>
+
+        <li>
+            <a class='top-level left' href='/'>Home</a>
+        </li>
+
+        {% for item in nav_links %}
+            <li class='{% if item.links %}links{% endif %}'>
+                <a class='top-level left' href='{{ item.get_absolute_url }}'>
+                    {{ item.title }}
+                </a>
+
+                {% if item.links %}
+                    <span class='drop-arrow block' onclick='toggleSubLevel("{{ forloop.counter }}")'></span>
+
+                    <div class='sub-level-wrapper sub-level-wrapper-{{ forloop.counter }}'>
+
+                        <ul class='sub-level sub-level-{{ forloop.counter }} left'>
+
+                            {% for sub_item in item.links %}
+                                <li>
+                                    <a class='sub-level left block {% if forloop.last %}last{% endif %}' href='{{ sub_item.get_absolute_url }}'>
+                                        {{ sub_item.title }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+
+                        </ul>
+
+                    </div>
+                {% endif %}
+            </li>
+        {% endfor %}
+
+    </ul>
+
+</div>

@@ -1,0 +1,21 @@
+<div class='clear-both'></div>
+
+{% if change and not is_popup %}
+    <div class='custom-admin-section'>
+
+        <a class='custom-link' href='/edit/{{ object_id }}'>
+            <i class="icon-pencil icon-alpha85" style='margin-top: 3px; margin-right: 5px;'></i> Preview and Edit Page
+        </a>
+
+        <div style='clear: both'></div>
+
+    </div>
+{% else %}
+    <div class='custom-admin-section'>
+
+        <span>You must fill out all necessary fields and save before you can edit the page content.</span>
+
+        <div style='clear: both'></div>
+
+    </div>
+{% endif %}

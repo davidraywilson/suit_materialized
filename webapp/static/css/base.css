@@ -1,0 +1,339 @@
+* {
+    line-height: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #777067;
+}
+
+body.front-editing {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#body-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1em;
+    margin: 0;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.8em;
+}
+
+a {
+    text-decoration: none;
+    color: #8DB7C9;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #263645;
+}
+
+a img {
+    border: none;
+}
+
+a, button {
+    outline: none;
+}
+
+ul, ol {
+    margin: 0;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+textarea {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border: 2px solid #DDDDDD;
+    border-radius: 4px;
+    outline: none;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'] {
+    height: 45px;
+    padding: 0 10px;
+}
+
+textarea {
+    resize: none;
+    padding: 10px;
+}
+
+
+/*========== COMMON CLASSES ==========*/
+.wrapper {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear-both {
+    clear: both;
+}
+
+a.block {
+    display: block;
+}
+
+.no-list {
+    list-style: none;
+}
+
+.bullet-list {
+    margin-left: 30px;
+}
+
+.btn {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .01em;
+    line-height: 1em;
+    text-transform: lowercase;
+    color: #FFFFFF;
+    padding: 15px 20px;
+    background: #8DB7C9;
+    border: none;
+    border-radius: 0;
+}
+
+.btn:hover {
+    color: #FFFFFF;
+    background: #263645;
+}
+
+a.btn {
+    color: #FFFFFF !important;
+}
+/*========== END COMMON CLASSES ==========*/
+
+
+/*========== HEADER ==========*/
+#header {
+    position: relative;
+    z-index: 2;
+    padding: 0;
+}
+
+.navbar {
+    margin: 0;
+    padding: 35px 0 10px 0;
+    background-color: #272727;
+    border-radius: 0;
+    z-index: 2000;
+}
+
+.navbar-collapse {
+    padding: 0;
+}
+
+.navbar-brand {
+    padding: 0 0 0 20px;
+}
+
+.navbar-toggle .icon-bar {
+    height: 4px;
+    background-color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        margin-top: 5px;
+    }
+
+    .navbar-brand img {
+        width: 225px;
+    }
+}
+/*========== END HEADER ==========*/
+
+
+/*========== FOOTER ==========*/
+#footer-wrapper {
+    color: #FFFFFF;
+    padding: 100px 0;
+    background-color: #272727;
+}
+
+#footer-wrapper .container {
+    min-height: 300px;
+}
+
+#footer-wrapper .left-col .left-col-copy {
+    margin-bottom: 40px;
+}
+
+#footer-wrapper h2 {
+    font-family: 'Neuton', Helvetica, Arial, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #8DB7C9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+#footer-wrapper p {
+    display: block;
+    font-weight: 300;
+    line-height: 1.6em;
+    margin: 0;
+}
+
+#footer-wrapper ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+#footer-wrapper ul li {
+    font-family: 'Crete Round', serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 1px;
+    line-height: 1.6em;
+}
+
+#footer-wrapper a {
+    color: #8DB7C9;
+}
+
+#footer-wrapper .right-col .right-col-copy a {
+    font-family: 'Crete Round', serif;
+    font-size: 19px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+#footer-wrapper a:hover {
+    text-decoration: underline;
+    color: #FFFFFF;
+}
+
+#footer-wrapper .social-icons {
+    margin: 40px 0 60px 0;
+}
+
+#footer-wrapper .social-icons img {
+    margin-right: 10px;
+}
+
+#footer-social #footer-icons {
+    height: 24px;
+    margin-bottom: 20px;
+}
+
+#footer-social #footer-icons img {
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+#footer-social #footer-icons img.last {
+    margin-right: 0;
+}
+
+#footer-wrapper .copyright {
+    display: block;
+    float: left;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+#footer-wrapper .copyright a {
+    display: inline-block;
+}
+
+#footer-wrapper .photographer {
+    display: block;
+    float: left;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+#footer-wrapper .photographer img {
+    margin-top: 5px;
+}
+
+/*==
+RESPONSIVENESS
+==*/
+@media (max-width: 767px) {
+    #footer-wrapper .right-col {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    #footer-wrapper .left-col {
+        float: left;
+        width: 360px;
+    }
+
+    #footer-wrapper .right-col {
+        float: right;
+        width: 320px;
+    }
+}
+
+@media (min-width: 992px) {
+    #footer-wrapper .container {
+        background: url('/static/images/logo.png') center 50px no-repeat;
+    }
+
+    #footer-wrapper .left-col {
+        width: 410px;
+    }
+
+    #footer-wrapper .left-col .left-col-copy {
+        padding-right: 55px;
+    }
+
+    #footer-wrapper .right-col {
+        width: 300px;
+    }
+}
+
+@media (min-width: 1199px) {
+    #footer-wrapper .left-col {
+        width: 460px;
+    }
+
+    #footer-wrapper .right-col {
+        width: 380px;
+    }
+}
+/*==
+END RESPONSIVENESS
+==*/
+/*========== END FOOTER ==========*/

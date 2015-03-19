@@ -1,0 +1,199 @@
+body .editable {
+    position: relative;
+    margin-top: -25px;
+    padding-top: 25px;
+}
+
+body .editable:hover,
+.editable:hover .section-wrapper {
+    background: url('/static/images/front_edit/edit_button.jpg') top left no-repeat transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+
+body .edit-button {
+    display: none;
+    position: absolute;
+    z-index: 5;
+    top: -30px;
+    right: 0;
+    height: 30px;
+    font-size: 12px;
+    color: #FFFFFF;
+    padding: 10px;
+    background-color: #333333;
+}
+
+body .editable:hover .edit-button {
+    display: block !important;
+}
+
+body .front-edit-dialog_layer {
+    z-index: 2000;
+}
+
+body #front-edit-lightbox {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    border-radius: 0;
+}
+
+body .front-edit-buttons {
+    float: right;
+    padding: 15px 20px 5px 20px;
+}
+
+body .front-edit-buttons button {
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .01em;
+    line-height: 1em;
+    text-transform: lowercase;
+    color: #FFFFFF;
+    margin-left: 10px;
+    padding: 15px 20px;
+    background: #8DB7C9;
+    border: none;
+    border-radius: 0;
+}
+
+body .front-edit-buttons button:hover {
+    color: #FFFFFF;
+    background: #263645;
+}
+
+body .front-edit-buttons select {
+    float: left;
+    margin-top: 15px;
+}
+
+
+/*========== USER ACTIONS ==========*/
+#user-actions-wrapper {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    bottom: 0;
+    color: #FFFFFF;
+    padding: 30px 20px;
+    background-color: #454545;
+}
+
+#user-actions-wrapper #ellipsis {
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#user-actions-wrapper #ellipsis span {
+    float: left;
+    width: 6px;
+    height: 6px;
+    margin-left: 4px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+#user-actions-wrapper .user-actions {
+    float: left;
+    margin-right: 40px;
+}
+
+#user-actions-wrapper .more-actions {
+    float: left;
+}
+
+#user-actions-wrapper .user-actions a {
+    color: #1C8ECB;
+}
+
+#user-actions-wrapper .more-actions a {
+    color: #FFFFFF;
+}
+
+#user-actions-wrapper span {
+    font-size: 14px;
+    text-transform: lowercase;
+    margin-bottom: 5px;
+}
+
+#user-actions-wrapper .more-actions span {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+#user-actions-wrapper span.logout {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 2px solid #FFFFFF;
+}
+
+#user-actions-wrapper a:hover {
+    text-decoration: underline;
+}
+
+#user-actions-wrapper span.break {
+    padding-right: 20px;
+    border-right: 2px solid #FFFFFF;
+}
+/*========== END USER ACTIONS ==========*/
+
+
+/*========== DIALOG ==========*/
+#mask {
+    display: none;
+    position: fixed;
+    z-index: 6000;
+    width: 100%;
+    height: 100%;
+    background-color: #454545;
+    opacity: 0.70;
+}
+
+#user-manage-dialog {
+    display: none;
+    position: fixed;
+    z-index: 7000;
+    top: 0;
+    bottom: 0;
+    left: -9999px;
+    right: 0;
+    width: 100%;
+    height: 635px;
+    margin: auto;
+    background-color: #454545;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+#user-manage-content {
+    height: 550px;
+    overflow: hidden;
+}
+
+#user-manage-content iframe {
+    position: relative !important;
+    top: -65px !important;
+    left: -200px !important;
+    width: 100% !important;
+    width: calc(100% + 200px) !important;
+    height: 100% !important;
+    height: calc(100% + 65px) !important;
+}
+
+#user-manage-buttons {
+    float: right;
+    padding: 20px;
+}
+
+#user-manage-buttons .btn {
+    margin-left: 20px;
+}
+/*========== END DIALOG ==========*/

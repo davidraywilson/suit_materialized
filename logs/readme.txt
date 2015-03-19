@@ -1,0 +1,1 @@
+Be sure this directory is read and writable by www-data on the server

@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load front_tags %}
+
+
+{% block page-title %}
+    {% if category_item.meta_title %}{{ category_item.meta_title }}{% else %}{{ category_item.label }}{% endif %}
+{% endblock %}
+
+
+{% block extra-head %}
+
+    <link type='text/css' rel='stylesheet' href='/static/css/flexslider.css'>
+    <link type='text/css' rel='stylesheet' href='/static/css/detail.css'>
+    <link type='text/css' rel='stylesheet' href='/static/css/category.css'>
+
+    <script src="/static/js/jquery.flexslider-min.js"></script>
+    <script type='text/javascript'>
+
+        $(document).ready(function () {
+
+            $('.flexslider').flexslider({
+                animation: 'slide',
+                prevText: '',
+                nextText: ''
+            });
+
+        });
+
+    </script>
+
+    {% front_edit_scripts editor='ckeditor' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div id='cover-image' class='wrapper' style='background-image: url("{{ category_item.image_cover }}")'>
+        {% include 'snippets/cover_image_logo.html' %}
+    </div>
+
+    <div id='category-item-wrapper' class='content-gutter wrapper'>
+
+        <div id='category-item' class='container'>
+
+            <div class='row'>
+
+                <div class='cat-item-slides col-xs-12 col-sm-7 col-md-7'>
+
+                    <div class='flexslider'>
+
+                        <ul class='slides'>
+
+                            {% for item in category_item.images %}
+                                <li>
+                                    <img src='{{ item.image }}'>
+                                </li>
+                            {% endfor %}
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class='cat-item-details col-sm-5 col-md-5'>
+
+                    {% if category %}
+                        <h2>{{ category.label }}</h2>
+                    {% endif %}
+
+                    <h1>{{ category_item.label }}</h1>
+
+                    <div class='cat-item-description'>
+
+                        {% front_edit 'category-description' django_front_key category_item.id %}
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            </p>
+                        {% end_front_edit %}
+                    </div>
+
+                    <ul class='cat-item-social no-list'>
+
+                        {% for item in category_item.social_links %}
+                            <li class='left'>
+                                <a href='{{ item.link }}' target='_blank'>
+                                    <img src='{{ item.image }}'>
+                                </a>
+                            </li>
+                        {% endfor %}
+
+                    </ul>
+
+                    <div class='clear-both'></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% if related_items %}
+            <div id='related-items' class='container'>
+
+                <div class='row'>
+
+                    <h3 class='col-md-12'>More in {{ category.label }}</h3>
+
+                    {% for item in related_items %}
+
+                        <div class='related-item col-xs-6 col-sm-6 col-md-3'>
+
+                            <a href='{% if item.external_link %}{{ item.external_link }}{% else %}/category/{{ category.slug }}/{{ item.slug }}{% endif %}'>
+                                <img src='{{ item.image_teaser }}' width='100%'>
+                            </a>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+        {% endif %}
+
+    </div>
+
+{% endblock %}
+
+
+{% if active_user %}
+    {% block user-actions %}
+
+        <span class='left'>
+            <a href='/admin/categories/categoryitem/{{ category_item.id }}/' target='_blank'>manage {{ category_item.label }}</a>
+        </span>
+
+        <span class='left'>
+            <a href='/admin/categories/categoryitem/add/' target='_blank'>create new category item</a>
+        </span>
+
+    {% endblock %}
+{% endif %}

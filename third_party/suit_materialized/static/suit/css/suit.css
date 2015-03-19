@@ -1,0 +1,148 @@
+/*==================== GENERAL ELEMENTS ====================*/
+header, main {
+    padding-left: 240px;
+}
+
+a {
+    color: #b388ff;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=url],
+input[type=date], input[type=tel], input[type=number], input[type=search],
+textarea.materialize-textarea,
+.select-wrapper input.select-dropdown {
+    height: 36px;
+    line-height: 36px;
+}
+
+fieldset {
+    width: 100%;
+    padding: 0;
+    border: none;
+}
+
+.input-field label {
+    color: #FFFFFF;
+}
+
+.input-field input[type=text]:focus + label,
+.input-field input[type=password]:focus + label {
+    color: #b388ff;
+}
+
+.input-field input[type=text]:focus,
+.input-field input[type=password]:focus {
+    border-bottom: 1px solid #b388ff;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+.input-field .prefix.active {
+    color: #b388ff !important;
+}
+
+/*=====
+RESPONSIVENESS
+=====*/
+@media only screen and (max-width: 992px) {
+    header, main {
+        padding-left: 0;
+    }
+}
+/*=====
+END RESPONSIVENESS
+=====*/
+/*==================== END GENERAL ELEMENTS ====================*/
+
+
+/*==================== HEADER SECTION ====================*/
+header .row {
+    margin: 0;
+}
+/*==================== END HEADER SECTION ====================*/
+
+
+/*==================== CONTENT SECTION ====================*/
+#content-container {
+    padding: 0 20px 40px 20px;
+}
+
+#content-container ul.breadcrumb li {
+    float: left;
+    margin-right: 10px;
+}
+
+#content-container #content h2.content-title {
+    display: none;
+}
+
+/*========== OBJECT TOOLS ==========*/
+#content .object-tools {
+    float: right;
+}
+
+#content .object-tools .btn {
+    width: 100%;
+    margin-bottom: 0;
+}
+/*========== END OBJECT TOOLS ==========*/
+
+/*========== TOOLBAR ==========*/
+#content #toolbar #searchbar,
+#content #toolbar .select-wrapper {
+    float: left;
+    width: 250px;
+    margin: 0 10px 10px 0;
+}
+
+#content #toolbar .select-wrapper input {
+    margin-bottom: 0;
+}
+
+#content #toolbar .btn {
+    margin-bottom: 0;
+}
+/*========== END TOOLBAR ==========*/
+
+
+/*========== TABLE ==========*/
+#content table th .relative-wrapper {
+    float: right;
+}
+
+#content table th .text {
+    float: left;
+}
+
+#content table td input {
+    margin: 0;
+}
+/*========== END TABLE ==========*/
+
+
+/*========== BOTTOM ACTIONS ==========*/
+#content .actions {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#content .actions .select-wrapper {
+    float: left;
+    clear: left;
+    width: 250px;
+    margin: 0 10px 0 0;
+}
+/*========== END BOTTOM ACTIONS ==========*/
+
+/*=====
+RESPONSIVENESS
+=====*/
+@media only screen and (max-width: 992px) {
+    #content-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+/*=====
+END RESPONSIVENESS
+=====*/
+/*==================== END CONTENT SECTION ====================*/

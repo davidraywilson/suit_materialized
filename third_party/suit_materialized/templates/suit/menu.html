@@ -1,0 +1,68 @@
+{#{% load sitetree %}#}
+{% load i18n suit_menu %}
+{% load url from future %}
+
+
+{% block menu_home %}
+
+    {% url 'admin:index' as index_url %}
+
+    <li class='bold {% if index_url == request.path %}active{% endif %}'>
+        <a class='waves-effect waves-teal' href="{{ index_url }}">
+            {% trans 'Dashboard' %}
+        </a>
+    </li>
+
+{% endblock %}
+
+{% get_menu request as app_list %}
+
+{% if app_list %}
+    {% for app in app_list %}
+
+        {% if app.models %}
+
+            <li class="no-padding">
+
+                <ul class="collapsible collapsible-accordion">
+
+                    <li class='bold {% if app.is_active %}active{% endif %}'>
+
+                        <a class="collapsible-header waves-effect waves-purple">{% trans app.label|capfirst %}</a>
+
+                        <div class="collapsible-body">
+
+                            <ul>
+
+                                {% for model in app.models %}
+                                    <li {% if model.is_active %}class=active{% endif %}>
+                                        <a href="{{ model.url }}"{{ model.blank|yesno:' target=_blank,' }}>
+                                            {{ model.label }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+
+                            </ul>
+
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </li>
+
+        {% else %}
+
+            <li class='bold {{ app.is_active|yesno:' class=active,' }}'>
+
+                <a href="{{ app.url }}"{{ app.blank|yesno:' target=_blank,' }}>
+                    {% trans app.label|capfirst %}
+                </a>
+
+            </li>
+
+        {% endif %}
+
+    {% endfor %}
+{% endif %}

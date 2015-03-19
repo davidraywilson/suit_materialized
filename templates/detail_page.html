@@ -1,0 +1,234 @@
+{% extends 'base.html' %}
+{% load front_tags %}
+
+
+{% block page-title %}
+    {% if page.meta_title %}{{ page.meta_title }}{% else %}{{ page.label }}{% endif %}
+{% endblock %}
+
+
+{% block extra-head %}
+
+    <link type='text/css' rel='stylesheet' href='/static/css/detail.css'>
+
+    <script type="text/javascript">
+
+
+    </script>
+
+    {% front_edit_scripts editor='ckeditor' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div id='cover-image' class='wrapper' style='background-image: url("{{ page.image_cover }}")'>
+        {% include 'snippets/cover_image_logo.html' %}
+    </div>
+
+    <div id='sections' class='content-gutter wrapper'>
+
+        <div id='page-title' class='container'>
+
+            <div class='row'>
+
+                <div class='col-md-12'>
+
+                    {% front_edit 'page-title' django_front_key page.id %}<h1>{{ page.label }}</h1>{% end_front_edit %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% block template_override_content %}{% endblock %}
+
+        {% for section in page.sections %}
+
+            <div class='section-wrapper wrapper'>
+
+                <div class='container'>
+
+                    <div class='row'>
+
+                        {% if section.image %}
+                            <div class='section-image col-md-12'>
+
+                                <img src='{{ section.image }}'>
+
+                            </div>
+                        {% endif %}
+
+                        <div class='header-col col-md-12'>
+
+                            {% front_edit 'header-col' django_front_key section.id %}
+
+                                <h2>Lorem ipsum dolor sit amet nihil amisi</h2>
+
+                            {% end_front_edit %}
+
+                        </div>
+
+                        {% ifequal section.template '1_col' %}
+
+                            <div class='one-col col-sm-12 col-md-12'>
+
+                                {% front_edit 'section-wide-col' django_front_key section.id %}
+
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor
+                                        sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                        deserunt mollit anim id est laborum.
+                                    </p>
+
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+
+                                {% end_front_edit %}
+
+                                <div class='clearfix'></div>
+
+                            </div>
+
+                        {% endifequal %}
+
+                        {% ifequal section.template '2_col' %}
+                            <div class='left-col col-xs-12 col-sm-6 col-md-6'>
+
+                                {% front_edit 'section-left-col' django_front_key section.id %}
+
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+
+                                {% end_front_edit %}
+
+                                <div class='clearfix'></div>
+
+                            </div>
+
+                            <div class='right-col col-xs-12 col-sm-6 col-md-6'>
+
+                                {% front_edit 'section-right-col' django_front_key section.id %}
+
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+
+                                {% end_front_edit %}
+
+                            </div>
+                        {% endifequal %}
+
+                        {% ifequal section.template '2_col_left' %}
+                            <div class='left-col-wide col-xs-12 col-sm-7 col-md-8'>
+
+                                {% front_edit 'section-left-col-wide' django_front_key section.id %}
+
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+
+                                {% end_front_edit %}
+
+                                <div class='clearfix'></div>
+
+                            </div>
+
+                            <div class='right-col-skinny col-xs-12 col-sm-5 col-md-4'>
+
+                                {% front_edit 'section-right-col-skinny' django_front_key section.id %}
+
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                        laboris nisi ut aliquip ex ea commodo consequat.
+                                    </p>
+
+                                {% end_front_edit %}
+
+                            </div>
+                        {% endifequal %}
+
+                        {% ifequal section.template '2_col_right' %}
+                            <div class='left-col-skinny col-xs-12 col-sm-5 col-md-4'>
+
+                                {% front_edit 'section-left-col-skinny' django_front_key section.id %}
+
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                        laboris nisi ut aliquip ex ea commodo consequat.
+                                    </p>
+
+                                {% end_front_edit %}
+
+                                <div class='clearfix'></div>
+
+                            </div>
+
+                            <div class='right-col-wide col-xs-12 col-sm-7 col-md-8'>
+
+                                {% front_edit 'section-right-col-wide' django_front_key section.id %}
+
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+
+                                {% end_front_edit %}
+
+                            </div>
+                        {% endifequal %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+{% endblock %}
+
+
+{% if active_user %}
+    {% block user-actions %}
+
+        <span class='left'>
+            <a onclick='displayManageWindow("/admin/page_content/webpage/{{ page.id }}/")'>edit page</a>
+        </span>
+
+    {% endblock %}
+{% endif %}

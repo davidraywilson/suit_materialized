@@ -1,0 +1,111 @@
+#content-wrapper ul {
+    margin-left: 15px;
+}
+
+#content-wrapper ul li {
+    margin-bottom: 8px;
+}
+
+#content-wrapper .content-gutter {
+    padding: 60px 0;
+}
+
+/*========== COVER IMAGE ==========*/
+#content-wrapper #cover-image {
+    position: relative;
+    height: 370px;
+    background-position: center;
+    background-size: cover;
+    background-color: #263645;
+    border-bottom: 50px solid #8DB7C9;
+}
+
+#content-wrapper #cover-image .cover-image-logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 325px;
+    margin: auto;
+}
+/*========== END COVER IMAGE ==========*/
+
+
+#content-wrapper #page-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+#content-wrapper #page-title h1 {
+    font-size: 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #8DB7C9;
+}
+
+
+/*========== SECTIONS ==========*/
+#content-wrapper #sections .section-wrapper {
+    margin-bottom: 60px;
+}
+
+#content-wrapper #sections .section-wrapper .editable {
+    padding-bottom: 5px;
+}
+
+#content-wrapper #sections .section-image {
+    margin-bottom: 30px;
+}
+
+#content-wrapper #sections .section-image img {
+    width: 100%;
+}
+
+#content-wrapper #sections .header-col {
+    margin-bottom: 20px;
+}
+
+#content-wrapper #sections h2 {
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #263645;
+    margin-bottom: 10px;
+}
+
+#content-wrapper #sections .header-col h2 {
+    margin-bottom: 0;
+}
+
+#content-wrapper #sections p {
+    margin-bottom: 20px;
+}
+/*========== END SECTIONS ==========*/
+
+
+/*========== CONTACT FORM ==========*/
+#map-wrapper {
+    margin-bottom: 40px;
+}
+
+#map-wrapper iframe {
+    width: 100% !important;
+}
+
+#contact-form-wrapper {
+    margin-bottom: 100px;
+}
+
+#contact-form-wrapper input[type='submit'] {
+    width: 100%;
+    height: 45px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #8DB7C9;
+}
+
+#contact-form-wrapper input[type='submit']:hover {
+    background-color: #263645;
+}
+/*========== END CONTACT FORM ==========*/

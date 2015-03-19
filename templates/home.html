@@ -1,0 +1,268 @@
+{% extends 'base.html' %}
+{% load front_tags %}
+
+
+{% block extra-head %}
+
+    <link type='text/css' rel='stylesheet' href='/static/css/flexslider.css'>
+    <link type='text/css' rel='stylesheet' href='/static/css/home.css'>
+
+    <script type='text/javascript' src='/static/js/jquery.flexslider-min.js'></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+    <script type='text/javascript'>
+
+        $(document).ready(function () {
+
+            $('.flexslider').flexslider({
+                animation: 'fade',
+                prevText: '',
+                nextText: '',
+                touch: false,
+                pauseOnHover: false
+            });
+
+        });
+
+    </script>
+
+    <!-- SNAZZY MAP -->
+    <script type="text/javascript">
+        // When the window has finished loading create our google map below
+        google.maps.event.addDomListener(window, 'load', init);
+
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 16,
+                scrollwheel: false,
+                navigationControl: false,
+                mapTypeControl: false,
+                disableDefaultUI: true,
+                zoomControl: true,
+
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(36.330842, -94.114544), // Millcreek Software
+
+                // How you would like to style the map.
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: [
+                    {
+                        "featureType": "all",
+                        "stylers": [
+                            {
+                                "saturation": -100
+                            },
+                            {
+                                "gamma": 0.5
+                            }
+                        ]
+                    }
+                ]
+            };
+
+            // Get the HTML DOM element that will contain your map
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('map-section');
+
+            // Create the Google Map using our element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+
+            // Let's also add a marker while we're at it
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(36.330842, -94.114544),
+                map: map,
+                title: 'Millcreek Software Inc'
+            });
+        }
+    </script>
+
+    {% front_edit_scripts editor='ckeditor' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+    {% for item in sections %}
+
+        {% ifequal item.template 'billboard' %}
+            <div id='billboard' class="flexslider billboards">
+
+                <ul class="slides">
+
+                    {% for billboard in billboards %}
+                        <li style="background-image: url('{{ billboard.image }}');">
+
+                            <div class='transparent-overlay'></div>
+
+                            <div class='container hidden-xs'>
+
+                                <div class='slide-content'>
+
+                                    <h1>{{ billboard.header }}</h1>
+
+                                    <h2>{{ billboard.sub_header }}</h2>
+
+                                </div>
+
+                            </div>
+
+                        </li>
+                    {% endfor %}
+
+                </ul>
+
+            </div>
+        {% endifequal %}
+
+        {% ifequal item.template 'mini_billboard' %}
+            <div id='mini-billboards' class='home-section col-md-12' style='background-image: url("{{ item.image_background }}");'>
+
+                <div class='container'>
+
+                    <div class='row'>
+
+                        {% for billboard in mini_billboards %}
+                            <div class='mini-billboard col-xs-12 {% ifequal billboard.size "s" %}col-sm-6 col-md-6 col-lg-6{% else %}col-sm-12 col-md-12 col-lg-12{% endifequal %}'>
+
+                                {% if billboard.image %}
+                                    {% if billboard.link %}
+                                        <a href='{{ billboard.link }}'>
+                                    {% endif %}
+
+                                <img src='{{ billboard.image }}'>
+
+                                {% if billboard.link %}
+                                    </a>
+                                {% endif %}
+                                {% else %}
+                                    {% autoescape off %}
+                                        {{ billboard.video }}
+                                    {% endautoescape %}
+                                {% endif %}
+
+                            </div>
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+            </div>
+        {% endifequal %}
+
+        {% ifequal item.template '1_col' %}
+            <div class='home-section free-form one-col col-md-12 {% if item.image_background %}color{% endif %}' style='background-image: url("{{ item.image_background }}");'>
+
+                <div class='container'>
+
+                    <div class='row'>
+
+                        <div class='hidden-xs col-sm-2 col-md-1 col-lg-2'></div>
+
+                        <div class='col-xs-12 col-sm-8 col-md-10 col-lg-8'>
+
+                            {% front_edit 'home-section-one-col' django_front_key item.id %}
+
+                                <h2>Double Click to Edit</h2>
+                                <p>
+                                    Once logged in, you can edit copy like this one by simply double clicking. It's that simple. Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+                                </p>
+
+                            {% end_front_edit %}
+
+                        </div>
+
+                        <div class='hidden-xs col-sm-2 col-md-1 col-lg-2'></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        {% endifequal %}
+
+        {% ifequal item.template '2_col' %}
+            <div class='home-section free-form col-md-12' style='background-image: url("{{ item.image_background }}");'>
+
+                <div class='container'>
+
+                    <div class='row'>
+
+                        <div class='col-xs-12 col-sm-6 col-md-6'>
+
+                            {% front_edit 'home-section-left-col' django_front_key item.id %}
+
+                                <h2>Double Click to Edit</h2>
+                                <p>
+                                    Once logged in, you can edit copy like this one by simply double clicking. It's that simple. Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
+
+                            {% end_front_edit %}
+
+                        </div>
+
+                        <div class='col-xs-12 col-sm-6 col-md-6'>
+
+                            {% front_edit 'home-section-right-col' django_front_key item.id %}
+
+                                <h2>Double Click to Edit</h2>
+                                <p>
+                                    Once logged in, you can edit copy like this one by simply double clicking. It's that simple. Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
+
+                            {% end_front_edit %}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        {% endifequal %}
+
+        {% ifequal item.template 'map' %}
+            <div class='clear-both'></div>
+
+            <div id='map-section' class='home-section'>
+
+
+            </div>
+
+            <div class='clear-both'></div>
+        {% endifequal %}
+
+    {% endfor %}
+
+{% endblock %}
+
+
+{% if active_user %}
+    {% block user-actions %}
+
+        <span class='left'>
+            <a onclick='displayManageWindow("/admin/home_content/homesection/")'>edit sections</a>
+        </span>
+
+        <span class='left'>
+            <a onclick='displayManageWindow("/admin/home_content/billboard/")'>edit billboards</a>
+        </span>
+
+        <span class='left'>
+            <a onclick='displayManageWindow("/admin/home_content/minibillboard/")'>edit mini billboards</a>
+        </span>
+
+    {% endblock %}
+{% endif %}

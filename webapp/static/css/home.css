@@ -1,0 +1,294 @@
+.home-section {
+    background-position: center;
+}
+
+.home-section .title-image {
+    display: block;
+    margin: 0 auto 30px auto;
+}
+
+/*========== BILLBOARD SECTION ==========*/
+#billboard .transparent-overlay {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: url('/static/images/transparent_overlay.png');
+}
+
+#billboard .slide-content {
+    position: absolute;
+    z-index: 3;
+    width: 500px;
+    color: #FFFFFF;
+    bottom: 80px;
+}
+
+#billboard .slide-content h1 {
+	font-family: 'Crete Round', serif;
+	font-size: 60px;
+	font-weight: 400;
+    font-style: italic;
+    margin: 0 0 5px 0;
+}
+
+#billboard .slide-content h2 {
+	font-family: 'Crete Round', serif;
+	font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2em;
+}
+/*========== END BILLBOARD SECTION ==========*/
+
+
+/*========== MINI BILLBOARD SECTION ==========*/
+#mini-billboards {
+    padding: 60px 0 40px 0;
+}
+
+#mini-billboards .mini-billboard img {
+    width: 100%;
+    height: 100%;
+}
+
+#mini-billboards .mini-billboard iframe {
+    display: block;
+    width: 100%;
+    height: 100% !important;
+}
+
+/*==
+RESPONSIVENESS
+==*/
+@media (max-width: 320px) {
+    #mini-billboards,
+    #mini-billboards .container {
+        padding: 0;
+    }
+}
+
+@media (min-width: 319px) and (max-width: 499px) {
+    #mini-billboards .mini-billboard {
+        float: none;
+        width: 320px;
+        height: 188px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+}
+
+@media (min-width: 321px) {
+    #mini-billboards .mini-billboard {
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 767px) {
+    #mini-billboards .mini-billboard {
+        float: none;
+        width: 500px;
+        height: 274px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    #mini-billboards .mini-billboard {
+        height: 204px;
+    }
+}
+
+@media (min-width: 992px) {
+    #mini-billboards .mini-billboard {
+        height: 264px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #mini-billboards .mini-billboard {
+        height: 307px;
+    }
+}
+/*==
+END RESPONSIVENESS
+==*/
+/*========== END MINI BILLBOARD SECTION ==========*/
+
+
+/*========== FREE FORM SECTION ==========*/
+.home-section.free-form {
+    padding: 140px 0 120px 0;
+    background-size: cover;
+}
+
+.home-section.free-form.one-col {
+    text-align: center;
+}
+
+.home-section.free-form h2,
+.home-section.free-form h3 {
+    font-family: 'Neuton', Georgia, serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8DB7C9;
+}
+
+.home-section.free-form h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.home-section.free-form h3 {
+    font-size: 20px;
+}
+
+.home-section.free-form h4 {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.home-section.free-form h3 span {
+    font-family: 'Crete Round', serif;
+    font-weight: 400;
+    font-style: italic;
+    text-transform: lowercase;
+}
+
+.home-section.free-form p {
+    font-weight: 300;
+    line-height: 1.6em;
+    color: #555555;
+    margin-bottom: 40px;
+}
+
+.home-section.free-form.one-col p {
+    font-family: 'Crete Round', serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.home-section.free-form.color p {
+    color: #FFFFFF;
+}
+
+/*==
+RESPONSIVENESS
+==*/
+@media (max-width: 767px) {
+    .home-section.free-form.one-col {
+        text-align: left;
+    }
+}
+/*==
+END RESPONSIVENESS
+==*/
+/*========== END ABOUT SECTION ==========*/
+
+
+/*========== MAP SECTION ==========*/
+#map-section {
+    width: 100%;
+    height: 500px;
+}
+/*========== END MAP SECTION ==========*/
+
+
+/*========== FLEXSLIDER OVERRIDES ==========*/
+/*=====
+BILLBOARDS
+=====*/
+.billboards {
+	width: 100%;
+	margin: 0;
+	border: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	overflow: hidden;
+}
+
+.billboards .slides {
+	width: 100%;
+	height: 100%;
+}
+
+.billboards .slides li {
+	min-width: 300px !important;
+	height: 650px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.billboards .flex-direction-nav a::before {
+    display: none;
+}
+
+.billboards .flex-direction-nav a {
+    width: 30px;
+    height: 30px;
+    margin: -20px 0 0;
+    display: block;
+    background: none;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    text-indent: -9999px;
+    opacity: 0;
+    -webkit-transition: all .3s ease;
+}
+
+.billboards .flex-direction-nav a.flex-next {
+    background-position: 100% 0;
+}
+
+.billboards:hover .flex-direction-nav a,
+.billboards:hover .flex-direction-nav a {
+    opacity: 0.8;
+}
+
+.billboards:hover .flex-next:hover,
+.billboards:hover .flex-prev:hover {
+    opacity: 1;
+}
+
+.billboards .flex-control-nav {
+    z-index: 4;
+    bottom: 30px;
+}
+
+.billboards .flex-control-nav li a {
+    display: block;
+    width: 13px;
+    height: 13px;
+    background: #FFFFFF;
+    cursor: pointer;
+    text-indent: -9999px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    opacity: 0.8;
+}
+
+.billboards .flex-control-nav li a.flex-active {
+    background: #8DB7C9;
+}
+/*=====
+END BILLBOARDS
+=====*/
+/*========== END FLEXSLIDER OVERRIDES ==========*/

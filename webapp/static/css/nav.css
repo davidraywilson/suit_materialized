@@ -1,0 +1,209 @@
+/*========== DESKTOP NAV ==========*/
+@media (min-width: 991px) {
+    /*===== TOP LEVEL =====*/
+    .navbar-nav {
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-nav li.top-level {
+        float: none;
+        display: inline-block;
+        height: 45px;
+    }
+
+    .navbar-nav li.separator {
+        color: #8DB7C9;
+        margin: 0 10px;
+    }
+
+    .navbar-nav li.dropdown:hover {
+        background: url('/static/images/nav/nav_arrow.png') center bottom no-repeat;
+    }
+
+    .navbar-nav li a {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        color: #FFFFFF;
+    }
+
+    .navbar-nav li.top-level a.top-level {
+        position: relative;
+        padding: 0;
+    }
+
+    .navbar-nav li.top-level a.top-level:hover {
+        color: #8DB7C9;
+        background: transparent;
+    }
+    /*===== END TOP LEVEL =====*/
+
+    /*===== SUB LEVEL =====*/
+    .navbar-nav li.top-level ul.dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 45px;
+        left: -40%;
+        width: 180%;
+        min-width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        background-color: #8DB7C9;
+        border: none;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        overflow: hidden;
+    }
+
+    .navbar-nav li.top-level:hover ul.dropdown-menu {
+        display: block;
+    }
+
+    .navbar-nav li.sub-level {
+        float: none;
+    }
+
+    .navbar-nav li.sub-level a.sub-level {
+        white-space: inherit;
+        padding: 15px 10px;
+    }
+
+    .navbar-nav li.sub-level a.sub-level:hover {
+        color: #8DB7C9;
+        background-color: #FFFFFF;
+    }
+    /*===== END SUB LEVEL =====*/
+}
+/*========== END DESKTOP NAV ==========*/
+
+
+/*========== MOBILE NAV ==========*/
+.hamburger {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 35px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin-bottom: 3px;
+    background-color: #FFFFFF;
+}
+
+#mobile-nav-wrapper {
+    position: fixed;
+    z-index: 5000;
+    top: 92px;
+    left: -320px;
+    width: 320px;
+    height: 100%;
+    height: calc(100% - 94px);
+    padding: 0 20px;
+    background-color: #454545;
+    overflow-y: auto;
+}
+
+#mobile-nav-wrapper #mobile-nav {
+    width: 100%;
+}
+
+#mobile-nav-wrapper li {
+    float: left;
+    width: 100%;
+}
+
+#mobile-nav-wrapper a {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding: 25px 0;
+    border-bottom: 1px solid #565656;
+    box-sizing: border-box;
+}
+
+#mobile-nav-wrapper a:hover {
+    text-decoration: none;
+    color: #8DB7C9;
+}
+
+#mobile-nav-wrapper a.top-level {
+    padding-left: 35px;
+}
+
+#mobile-nav-wrapper a.top-level.last {
+    border-bottom: none;
+}
+
+#mobile-nav-wrapper li.links a.top-level {
+    width: calc(100% - 65px);
+}
+
+#mobile-nav-wrapper li span.drop-arrow {
+    float: right;
+    width: 65px;
+    height: 65px;
+    background: url('/static/images/nav/down_arrow.png') center no-repeat;
+    border-bottom: 1px solid #565656;
+    cursor: pointer;
+}
+
+#mobile-nav-wrapper li span.drop-arrow:hover {
+    background-color: #8DB7C9;
+}
+
+#mobile-nav-wrapper ul {
+    width: 100%;
+    list-style: none;
+}
+
+#mobile-nav-wrapper .sub-level-wrapper {
+    float: left;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+}
+
+#mobile-nav-wrapper a.sub-level {
+    width: calc(100% - 35px);
+    margin-left: 35px;
+    padding-left: 10px;
+}
+
+#mobile-nav-wrapper a.sub-level.last {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 45px;
+}
+/*========== END MOBILE NAV ==========*/
+
+
+/*========== RESPONSIVENESS ==========*/
+@media (max-width: 1024px) {
+    .nav {
+        display: none;
+        visibility: hidden;
+    }
+
+    .hamburger {
+        top: 15px;
+    }
+
+    #mobile-nav-wrapper {
+        top: 50px;
+        height: calc(100% - 50px);
+    }
+}
+/*========== END RESPONSIVENESS ==========*/

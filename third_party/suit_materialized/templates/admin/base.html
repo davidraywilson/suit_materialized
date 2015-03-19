@@ -1,0 +1,191 @@
+{% load admin_static %}{% load suit_tags %}{% load url from future %}<!DOCTYPE html>
+
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% block blockbots %}
+        <meta name="robots" content="NONE,NOARCHIVE"/>{% endblock %}
+
+    <title>{% block title %}{{ title }} | {{ 'ADMIN_NAME'|suit_conf }}{% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% endblock %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'suit/materialize/css/materialize.min.css' %}" media="all"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'suit/css/suit.css' %}" media="all">
+    <link rel="stylesheet" type="text/css" href="{% static 'suit/css/menu.css' %}" media="all">
+
+    {% block extrastyle %}{% endblock %}
+
+    {% if LANGUAGE_BIDI %}
+        <link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}"/>
+    {% endif %}
+
+    <script type="text/javascript">window.__admin_media_prefix__ = "{% filter escapejs %}{% static "admin/" %}{% endfilter %}";</script>
+    <script src="{% static 'suit/js/jquery-1.8.3.min.js' %}"></script>
+    <script type="text/javascript">var Suit = { $: $.noConflict() };
+    if (!$) $ = Suit.$; </script>
+
+    <script type='text/javascript'>
+
+        $(document).ready(function () {
+
+            $(".button-collapse").sideNav();
+
+        });
+
+    </script>
+
+    {% if 'SHOW_REQUIRED_ASTERISK'|suit_conf %}
+        <style type="text/css">.required:after {
+            content: '*';
+            margin: 0 0 0 5px;
+            position: absolute;
+            color: #ccc;
+        }</style>
+    {% endif %}
+
+    {% block extrahead %}{% endblock %}
+
+</head>
+
+{% load i18n %}
+
+<body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}">
+
+<!-- Sticky footer wrap -->
+<div id="wrap">
+
+    <!-- Container -->
+    {% block container %}
+
+        <header>
+
+            <nav class='top-nav deep-purple lighten-1'>
+                <div class='row'>
+                    <div class='nav-wrapper col s12'><a class="page-title">{{ 'ADMIN_NAME'|suit_conf }}</a></div>
+                </div>
+            </nav>
+
+            <div class='row'><a href="#" data-activates='slide-out' class="button-collapse top-nav full"><i class="mdi-navigation-menu"></i></a></div>
+
+            <ul id='slide-out' class="side-nav fixed">
+
+                <li class='logo'>
+                    <a id='logo-container' href='/admin/' class='brand-logo'>
+                        <img src='/static/images/admin_logo.png' width='100' alt='Millcreek Software'>
+                    </a>
+                </li>
+
+                {% include 'suit/menu.html' %}
+
+            </ul>
+
+        </header>
+
+        <main>
+
+            <div id='content-container'>
+
+                <div class='row'>
+
+                    {% block breadcrumbs %}
+
+                        <ul class='breadcrumb col s1'>
+
+                            <li>
+                                <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+                            </li>
+
+                            <li class="active">
+                                {{ title }}
+                            </li>
+
+                        </ul>
+
+                    {% endblock %}
+
+                </div>
+
+                {% block messages %}
+
+                    {% if messages %}
+                        {% for message in messages %}
+
+                            <script type='text/javascript'>
+
+                                $(document).ready(function () {
+                                    toast("{{ message }}", 4000)
+                                });
+
+                            </script>
+
+                            {#                            <div class="alert alert-{% firstof message.tags 'info' %}">#}
+                            {##}
+                            {#                                <button class="close" data-dismiss="alert">×</button>#}
+                            {#                                {{ message }}#}
+                            {##}
+                            {#                            </div>#}
+                        {% endfor %}
+                    {% endif %}
+
+                {% endblock messages %}
+
+                <!-- Content -->
+                <div id="content" class="{% block coltype %}colM{% endblock %} row-fluid">
+
+                    {% block pretitle %}{% endblock %}
+
+                    {% block content_title %}
+
+                        {% if title %}
+                            <h2 class="content-title">{{ title }}</h2>
+                        {% endif %}
+
+                    {% endblock %}
+
+                    {% block content %}
+
+                        {% block object-tools %}{% endblock %}
+
+                        {{ content }}
+
+                    {% endblock %}
+
+                    {% block sidebar_content %}
+
+                        {% block sidebar %}{% endblock %}
+
+                    {% endblock %}
+
+                </div>
+                <!-- END Content -->
+
+            </div>
+
+        </main>
+
+    {% endblock %}
+
+    {% if not is_popup %}
+        <!-- Sticky footer push -->
+        <div id="push"></div>
+    {% endif %}
+
+</div>
+
+<script src="{% static 'suit/materialize/js/materialize.min.js' %}"></script>
+
+<script type='text/javascript'>
+
+    $(document).ready(function () {
+        $('select').material_select();
+    });
+
+</script>
+
+{% block extrajs %}{% endblock %}
+
+</body>
+
+</html>

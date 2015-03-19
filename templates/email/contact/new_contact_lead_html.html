@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style="margin: 0;padding: 0;">
+<head style="margin: 0;padding: 0;">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" style="margin: 0;padding: 0;">
+
+    <!-- Facebook sharing information tags -->
+    <meta property="og:title" content="*New Contact Lead*" style="margin: 0;padding: 0;">
+
+    <title style="margin: 0;padding: 0;">New Contact Lead</title>
+
+</head>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0"
+      style="margin: 0;padding: 0;-webkit-text-size-adjust: none;font-family: arial, helvetica, sans-serif;font-size: 12px;background-color: #FFFFFF;width: 100%;">
+<center style="margin: 0;padding: 0;">
+    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable"
+           style="margin: 0;padding: 0;border: none;background-color: #FFFFFF;height: 100%;width: 100%;">
+        <tr style="margin: 0;padding: 0;">
+            <td align="center" valign="top" style="margin: 0;padding: 0;">
+
+                <table class="header" style="font-family: Helvetica Neue, Arial, sans-serif;font-weight: 200;font-size: 22px;color: #FFFFFF;margin: 0;padding: 0;border: 0;width: 100%;background: #272727;">
+
+                    <tr style="margin: 0;padding: 0;">
+
+                        <td style="text-align: left;margin: 0;padding: 10px;">
+
+                            Millcreek Software Inc.
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <table class="section" style="margin: 0;padding: 0;border: 0;width: 100%;background: #FFFFFF;">
+                    <tr style="margin: 0;padding: 0;">
+                        <td class="sectionTD" style="margin: 0;padding: 20px 10px;text-align: left;">
+
+                            <p style="margin: 0 0 20px 0;padding: 0;color: #454545;font-family: Helvetica Neue, Arial, sans-serif;font-weight: 200;font-size: 18px;">
+                                {{ contactLead.first_name }} {{ contactLead.last_name }} sent you a message:
+                            </p>
+
+                            <p style="margin: 0 0 20px 0;padding: 0;color: #454545;font-family: Helvetica Neue, Arial, sans-serif;font-weight: 200;font-size: 18px;">
+                                "{{ contactLead.message }}"
+                            </p>
+
+                            <br>
+
+                            <p style="margin: 0 0 20px 0;padding: 0;color: #454545;font-family: Helvetica Neue, Arial, sans-serif;font-weight: 200;font-size: 18px;">
+                                Email them back at:
+                                <a href="mailto:{{ contactLead.email }}" style="margin: 0;padding: 0;text-decoration: none;color: #D8AF46;">
+                                    {{ contactLead.email }}
+                                </a>
+                            </p>
+
+                        </td>
+
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</center>
+</body>
+</html>

@@ -1,0 +1,133 @@
+ul.side-nav.fixed li.logo {
+    text-align: center;
+    line-height: 30px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+ul.side-nav.fixed li.logo:hover {
+    background-color: transparent;
+}
+
+ul.side-nav.fixed {
+    overflow: hidden;
+}
+
+ul.side-nav.fixed li {
+    line-height: 44px;
+    padding: 0;
+}
+
+ul.side-nav.fixed li:hover, ul.side-nav.fixed li.active {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+ul.side-nav.fixed li a {
+    font-size: 13px;
+    margin: 0;
+    padding: 0 20px;
+}
+
+ul.side-nav.fixed ul.collapsible-accordion {
+    background-color: #FFFFFF;
+}
+
+ul.side-nav.fixed li.active ul.collapsible-accordion {
+    display: block;
+}
+
+ul.side-nav .collapsible-body li.active, ul.side-nav.fixed .collapsible-body li.active {
+    background-color: #7e57c2
+}
+
+ul.side-nav .collapsible-body li a {
+    padding: 0 30px !important;
+}
+
+ul.side-nav.fixed:hover {
+    overflow-y: auto;
+}
+
+.bold > a {
+    font-weight: bold;
+}
+
+#logo-container {
+    margin-bottom: 20px;
+}
+
+nav.top-nav {
+    height: 122px;
+    padding-left: 15px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+nav.top-nav a.page-title {
+    line-height: 122px;
+    font-size: 48px;
+}
+
+a.button-collapse.top-nav {
+    position: absolute;
+    left: 7.5%;
+    top: 0;
+    float: none;
+    margin-left: 1.5rem;
+    color: #FFFFFF;
+    font-size: 32px;
+    z-index: 2;
+}
+
+a.button-collapse.top-nav.full {
+    line-height: 122px;
+}
+
+@media only screen and (max-width: 600px) {
+    a.button-collapse.top-nav {
+        left: 5%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    nav .nav-wrapper {
+        text-align: center;
+    }
+
+    nav .nav-wrapper a.page-title {
+        font-size: 36px;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 85%;
+    }
+}
+
+#front-page-logo {
+    display: inline-block;
+    height: 100%;
+    pointer-events: none;
+}
+
+@media only screen and (max-width: 992px) {
+    #front-page-nav ul.side-nav li {
+        float: none;
+        padding: 0 15px;
+    }
+
+    #front-page-nav ul.side-nav li:hover {
+        background-color: #DDDDDD;
+    }
+
+    #front-page-nav ul.side-nav li .active {
+        background-color: transparent;
+    }
+
+    #front-page-nav ul.side-nav a {
+        color: #444444;
+    }
+}

@@ -1,0 +1,39 @@
+{#        <div id='billboard-details'>#}
+{##}
+{#            <div class='container'>#}
+{##}
+{#                <div class='row'>#}
+{##}
+{#                    <div id='category-row' class='col-md-12'>#}
+{##}
+{#                        <div class='row'>#}
+{##}
+{#                            {% for category in categories %}#}
+{#                                <div class='billboard-category col-xs-12 col-sm-4 col-md-4'>#}
+{##}
+{#                                    <div data-toggle='collapse' data-target='#1'>#}
+{##}
+{#                                        <h2>{{ category.label }}</h2>#}
+{##}
+{#                                        <div id='billboard-category-{{ category.id }}' class="collapse">#}
+{##}
+{#                                            <p>{{ category.teaser }}</p>#}
+{##}
+{#                                        </div>#}
+{##}
+{#                                        <h3><a href='{{ category.get_absolute_url }}'>see more</a></h3>#}
+{##}
+{#                                    </div>#}
+{##}
+{#                                </div>#}
+{#                            {% endfor %}#}
+{##}
+{#                        </div>#}
+{##}
+{#                    </div>#}
+{##}
+{#                </div>#}
+{##}
+{#            </div>#}
+{##}
+{#        </div>#}

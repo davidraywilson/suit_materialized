@@ -1,0 +1,28 @@
+.errornote {
+    margin: 0;
+    padding: 20px;
+}
+
+#content-main {
+    width: 100%;
+    height: 100%;
+}
+
+#content-main #form-wrapper {
+    width: 350px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 45px;
+}
+
+#content-main #form-wrapper h2 {
+    font-size: 32px;
+    font-weight: 100;
+    line-height: 1em;
+    margin: 0;
+}
+
+#content-main #form-wrapper .submit-row {
+    margin-top: 20px;
+}

@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load front_tags %}
+
+
+{% block page-title %}
+    {% if category.meta_title %}{{ category.meta_title }}{% else %}{{ category.label }}{% endif %}
+{% endblock %}
+
+
+{% block extra-head %}
+
+    <link type='text/css' rel='stylesheet' href='/static/css/detail.css'>
+    <link type='text/css' rel='stylesheet' href='/static/css/category.css'>
+
+    <script type="text/javascript">
+
+
+    </script>
+
+    {% front_edit_scripts editor='ckeditor' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div id='cover-image' class='wrapper' style='background-image: url("{{ category.image_cover }}")'>
+        {% include 'snippets/cover_image_logo.html' %}
+    </div>
+
+    <div id='category-items' class='content-gutter wrapper'>
+
+        <div id='page-title' class='container'>
+
+            <div class='row'>
+
+                <div class='col-md-12'>
+
+                    <h1>{{ category.label }}</h1>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class='container'>
+
+            <div class='row'>
+
+                {% for item in category.children %}
+                    <div class='cat-item col-xs-12 col-sm-6 col-md-4'>
+
+                        <img class='cat-item-image' src='{{ item.image_teaser }}'>
+
+                        <div class='cat-item-content'>
+
+                            <h2 class='cat-item-title'>{{ item.label }}</h2>
+
+                            {% front_edit 'category-item-teaser' django_front_key item.id %}
+                                <p>
+                                    Double click here to edit the teaser. Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit, sed do eiusmod tempor incididunt ut labore et dolore.
+                                </p>
+                            {% end_front_edit %}
+
+                            <div class='clear-both'></div>
+
+                            <a href='{% if item.external_link %}{{ item.external_link }}{% else %}/category/{{ category.slug }}/{{ item.slug }}{% endif %}'>read more</a>
+
+                        </div>
+
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+
+{% if active_user %}
+    {% block user-actions %}
+
+        <span class='left'>
+            <a onclick='displayManageWindow("/admin/categories/category/{{ category.id }}/")'>edit {{ category.label }}</a>
+        </span>
+
+        <span class='left'>
+            <a onclick='displayManageWindow("/admin/categories/categoryitem/add/")'>category items</a>
+        </span>
+
+        <span class='left'>
+            <a onclick='displayManageWindow("/admin/categories/category/add/")'>new category</a>
+        </span>
+
+    {% endblock %}
+{% endif %}
