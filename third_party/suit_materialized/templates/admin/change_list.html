@@ -144,11 +144,10 @@
 
                             {% suit_bc_value 1.5 'pop' 1.6 '_popup' as POPUP_VAR %}
 
-                            <div class='alert teal'>
+                            <div class='no-objects-alert white-text col s12'>
 
                                 {% if cl.full_result_count %}
-                                    <h4>{% trans 'Nothing found' %}!</h4>
-                                    <br>
+                                    <h4>{% trans 'No results found' %}.</h4>
                                     <a href="?{% if cl.is_popup %}{{ POPUP_VAR }}=1{% endif %}">{% trans 'Reset search and filters' %}</a>
                                 {% else %}
                                     {% blocktrans with cl.opts.verbose_name_plural|capfirst as name_plural %}

@@ -23,6 +23,10 @@
     margin: 0;
 }
 
+#content-main #form-wrapper input {
+    color: #FFFFFF;
+}
+
 #content-main #form-wrapper .submit-row {
     margin-top: 20px;
 }

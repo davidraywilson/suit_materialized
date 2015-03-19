@@ -51,7 +51,7 @@
 
 {% load i18n %}
 
-<body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}">
+<body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %} grey darken-3">
 
 <!-- Sticky footer wrap -->
 <div id="wrap">
@@ -69,11 +69,11 @@
 
             <div class='row'><a href="#" data-activates='slide-out' class="button-collapse top-nav full"><i class="mdi-navigation-menu"></i></a></div>
 
-            <ul id='slide-out' class="side-nav fixed">
+            <ul id='slide-out' class="side-nav fixed grey darken-4">
 
                 <li class='logo'>
                     <a id='logo-container' href='/admin/' class='brand-logo'>
-                        <img src='/static/images/admin_logo.png' width='100' alt='Millcreek Software'>
+                        <img src='/static/images/admin_logo.png' width='75' alt='Millcreek Software'>
                     </a>
                 </li>
 
@@ -120,19 +120,13 @@
 
                             </script>
 
-                            {#                            <div class="alert alert-{% firstof message.tags 'info' %}">#}
-                            {##}
-                            {#                                <button class="close" data-dismiss="alert">×</button>#}
-                            {#                                {{ message }}#}
-                            {##}
-                            {#                            </div>#}
                         {% endfor %}
                     {% endif %}
 
                 {% endblock messages %}
 
                 <!-- Content -->
-                <div id="content" class="{% block coltype %}colM{% endblock %} row-fluid">
+                <div id="content" class="{% block coltype %}colM{% endblock %} row">
 
                     {% block pretitle %}{% endblock %}
 

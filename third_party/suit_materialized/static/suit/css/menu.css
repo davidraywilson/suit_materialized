@@ -3,7 +3,7 @@ ul.side-nav.fixed li.logo {
     line-height: 30px;
     margin-top: 20px;
     margin-bottom: 15px;
-    border-bottom: 1px solid #DDDDDD;
+    border-bottom: 1px solid #333333;
 }
 
 ul.side-nav.fixed li.logo:hover {
@@ -25,12 +25,9 @@ ul.side-nav.fixed li:hover, ul.side-nav.fixed li.active {
 
 ul.side-nav.fixed li a {
     font-size: 13px;
+    color: #EEEEEF;
     margin: 0;
     padding: 0 20px;
-}
-
-ul.side-nav.fixed ul.collapsible-accordion {
-    background-color: #FFFFFF;
 }
 
 ul.side-nav.fixed li.active ul.collapsible-accordion {
