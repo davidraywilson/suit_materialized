@@ -1,13 +1,5 @@
-ul.side-nav.fixed li.logo {
-    text-align: center;
-    line-height: 30px;
-    margin-top: 20px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #333333;
-}
-
-ul.side-nav.fixed li.logo:hover {
-    background-color: transparent;
+.collapsible {
+    border: none;
 }
 
 ul.side-nav.fixed {
@@ -19,8 +11,20 @@ ul.side-nav.fixed li {
     padding: 0;
 }
 
+ul.side-nav.fixed li.logo {
+    text-align: center;
+    line-height: 30px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333333;
+}
+
 ul.side-nav.fixed li:hover, ul.side-nav.fixed li.active {
     background-color: rgba(0, 0, 0, 0.05);
+}
+
+ul.side-nav.fixed li.logo:hover {
+    background-color: transparent;
 }
 
 ul.side-nav.fixed li a {
@@ -28,6 +32,16 @@ ul.side-nav.fixed li a {
     color: #EEEEEF;
     margin: 0;
     padding: 0 20px;
+}
+
+ul.side-nav.fixed li a i {
+    display: block;
+    float: left;
+    width: 2rem;
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 2.8rem;
+    margin-right: 10px;
 }
 
 ul.side-nav.fixed li.active ul.collapsible-accordion {
@@ -44,10 +58,6 @@ ul.side-nav .collapsible-body li a {
 
 ul.side-nav.fixed:hover {
     overflow-y: auto;
-}
-
-.bold > a {
-    font-weight: bold;
 }
 
 #logo-container {

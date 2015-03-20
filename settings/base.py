@@ -167,13 +167,13 @@ SUIT_CONFIG = {
     },
     'MENU_OPEN_FIRST_CHILD': True,  # Default True
     'MENU': (
-        {'app': 'auth', 'label': 'Administration', 'icon': 'icon-lock', 'models': ('user', 'group')},
-        {'app': 'navigation', 'icon': 'icon-list'},
-        {'app': 'categories', 'icon': 'icon-th'},
-        {'app': 'home_content', 'label': 'Home Content', 'icon': 'icon-file', 'models': ('homesection', 'billboard', 'minibillboard')},
-        {'app': 'page_content', 'label': 'Page Content', 'icon': 'icon-file', 'models': ('logo', 'footer', 'webpage')},
-        {'app': 'contact', 'icon': 'icon-user'},
-        {'label': 'Site Media', 'icon': 'icon-picture', 'url': '/admin/filebrowser/browse/'},
+        {'app': 'auth', 'label': 'Administration', 'icon': 'mdi-action-lock', 'models': ('user', 'group')},
+        {'app': 'navigation', 'icon': 'mdi-action-list'},
+        {'app': 'categories', 'icon': 'mdi-action-view-module'},
+        {'app': 'home_content', 'label': 'Home Content', 'icon': 'mdi-action-description', 'models': ('homesection', 'billboard', 'minibillboard')},
+        {'app': 'page_content', 'label': 'Page Content', 'icon': 'mdi-action-description', 'models': ('logo', 'footer', 'webpage')},
+        {'app': 'contact', 'icon': 'mdi-action-question-answer'},
+        {'label': 'Site Media', 'icon': 'mdi-image-camera-roll', 'url': '/admin/filebrowser/browse/'},
     ),
     'LIST_PER_PAGE': 30
 }

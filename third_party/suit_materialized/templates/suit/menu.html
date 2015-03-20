@@ -9,6 +9,7 @@
 
     <li class='bold {% if index_url == request.path %}active{% endif %}'>
         <a class='waves-effect waves-teal' href="{{ index_url }}">
+            <i class='mdi-action-home'></i>
             {% trans 'Dashboard' %}
         </a>
     </li>
@@ -24,11 +25,14 @@
 
             <li class="no-padding">
 
-                <ul class="collapsible collapsible-accordion">
+                <ul class="">
 
                     <li class='bold {% if app.is_active %}active{% endif %}'>
 
-                        <a class="collapsible-header waves-effect waves-purple">{% trans app.label|capfirst %}</a>
+                        <a class="collapsible-header waves-effect waves-purple">
+                            <i class="{% firstof app.icon 'icon-chevron-right' %}"></i>
+                            {% trans app.label|capfirst %}
+                        </a>
 
                         <div class='collapsible-body grey darken-3'>
 
@@ -57,6 +61,7 @@
             <li class='bold {{ app.is_active|yesno:' class=active,' }}'>
 
                 <a href="{{ app.url }}"{{ app.blank|yesno:' target=_blank,' }}>
+                    <i class="{% firstof app.icon 'icon-chevron-right' %}"></i>
                     {% trans app.label|capfirst %}
                 </a>
 
