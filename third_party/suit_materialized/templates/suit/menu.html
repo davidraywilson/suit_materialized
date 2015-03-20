@@ -8,7 +8,7 @@
     {% url 'admin:index' as index_url %}
 
     <li class='bold {% if index_url == request.path %}active{% endif %}'>
-        <a class='waves-effect waves-teal' href="{{ index_url }}">
+        <a class='waves-effect waves-purple' href="{{ index_url }}">
             <i class='mdi-action-home'></i>
             {% trans 'Dashboard' %}
         </a>
