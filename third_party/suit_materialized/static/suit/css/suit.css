@@ -13,7 +13,6 @@ textarea.materialize-textarea,
 .select-wrapper input.select-dropdown {
     height: 36px;
     line-height: 36px;
-    border-bottom: 1px solid #222222;
 }
 
 fieldset {
@@ -69,7 +68,6 @@ header .row {
 
 #content-container ul.breadcrumb li {
     float: left;
-    color: #EEEEEF;
     margin-right: 10px;
 }
 
@@ -121,10 +119,6 @@ header .row {
 
 
 /*========== TABLE ==========*/
-#content table.bordered tr {
-    border-bottom: 1px solid #222222;
-}
-
 #content table th,
 #content table td {
     border-radius: 0;

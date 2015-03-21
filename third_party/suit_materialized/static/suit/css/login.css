@@ -23,8 +23,14 @@
     margin: 0;
 }
 
-#content-main #form-wrapper input {
-    color: #FFFFFF;
+input[type=text], input[type=password], input[type=email], input[type=url],
+input[type=date], input[type=tel], input[type=number], input[type=search],
+textarea.materialize-textarea,
+.select-wrapper input.select-dropdown {
+    height: 36px;
+    line-height: 36px;
+    color: #EEEEEF;
+    border-bottom: 1px solid #222222;
 }
 
 #content-main #form-wrapper .submit-row {
