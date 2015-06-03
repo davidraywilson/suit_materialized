@@ -15,8 +15,28 @@ ul.side-nav.fixed li.logo {
     text-align: center;
     line-height: 30px;
     margin-top: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border-bottom: none;
+}
+
+ul.side-nav.fixed li.logo #logo-circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+ul.side-nav.fixed li.logo #logo-circle img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+    height: 120px;
+    margin: auto;
 }
 
 ul.side-nav.fixed li:hover, ul.side-nav.fixed li.active {

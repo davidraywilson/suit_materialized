@@ -155,7 +155,7 @@ LOGGING = {
 }
 
 SUIT_CONFIG = {
-    'ADMIN_NAME': 'Millcreek Software',
+    'ADMIN_NAME': 'Suit Materialized',
     'HEADER_DATE_FORMAT': 'l, F jS, Y',
     'HEADER_TIME_FORMAT': 'h:i a',
     'SHOW_REQUIRED_ASTERISK': True,  # Default True
